@@ -153,6 +153,115 @@ class ViewController: UIViewController, ARSessionDelegate {
         arView.session.run(configuration)
     }
     
+    func startSession() {
+        DispatchQueue.main.async {
+            if let configuration = self.arView.session.configuration {
+                self.arView.session.run(configuration, options: .resetSceneReconstruction)
+            }
+        }
+    }
+    
+    func saveFailed() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: false) {
+                let alert = UIAlertController(title: "저장 실패", message: nil, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    func saveSucceeded() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: false) {
+                let alert = UIAlertController(title: "저장 완료", message: nil, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    @IBAction func saveClicked(_ button: UIButton) {
+        GZLogFunc()
+
+        arView.session.pause()
+        
+        let alert = UIAlertController(title: "Saving...", message: nil, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+
+        rootDirectoryForICloud { (url) in
+            GZLogFunc(url)
+            if let url = url {
+                let meshAnchors = self.arView.session.currentFrame?.anchors.compactMap({ $0 as? ARMeshAnchor });
+                DispatchQueue.global().async {
+                    let directory = url
+                    let filename = directory.appendingPathComponent("MyFirstMesh.obj");
+                    
+                    guard let device = MTLCreateSystemDefaultDevice() else {
+                        GZLogFunc("metal device could not be created");
+                        self.saveFailed()
+                        self.startSession()
+                        return;
+                    };
+                    
+                    
+                    do {
+                        try meshAnchors?.save(to: filename, device: device)
+                        self.saveSucceeded()
+                    }
+                    catch {
+                        GZLogFunc(error)
+                        self.saveFailed()
+                    }
+                    
+//                    let asset = MDLAsset();
+//                    for anchor in meshAnchors! {
+//                        let mdlMesh = anchor.geometry.toMDLMesh(device: device);
+//                        asset.add(mdlMesh);
+//                    }
+//
+//                    do {
+//                        try asset.export(to: filename);
+//                    } catch {
+//                        GZLogFunc("failed to write to file");
+//                    }
+                    GZLogFunc()
+                    
+                    self.startSession()
+                }
+            }
+            else {
+                self.saveFailed()
+                self.startSession()
+            }
+        }
+    }
+    
+    func rootDirectoryForICloud(completion:@escaping (URL?) -> Void) {
+        DispatchQueue.global().async {
+            let directory = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents")
+            do {
+                if let d = directory {
+                    if FileManager.default.fileExists(atPath: d.path) == false {
+                        try FileManager.default.createDirectory(at: d, withIntermediateDirectories: true, attributes: nil)
+                    }
+                }
+                DispatchQueue.main.async {
+                    completion(directory)
+                }
+            }
+            catch {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
+
     func nearbyFaceWithClassification(to location: SIMD3<Float>, completionBlock: @escaping (SIMD3<Float>?, ARMeshClassification) -> Void) {
         guard let frame = arView.session.currentFrame else {
             completionBlock(nil, .none)

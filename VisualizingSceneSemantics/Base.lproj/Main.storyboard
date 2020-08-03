@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +20,7 @@
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-bN-ivP">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-l9-Sbs" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-l9-Sbs" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
                                 <rect key="frame" x="734" y="1134" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="d6r-DE-hqM"/>
@@ -28,7 +30,7 @@
                                     <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppV-5I-zqo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-0H-1oF" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-0H-1oF" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
                                 <rect key="frame" x="30" y="1134" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="X4V-2V-lzu"/>
@@ -38,7 +40,7 @@
                                     <action selector="toggleMeshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAj-OA-cbI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt1-je-2X5" userLabel="Plane Detection Button" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pt1-je-2X5" userLabel="Plane Detection Button" customClass="RoundedButton" customModule="Scene_Semantics" customModuleProvider="target">
                                 <rect key="frame" x="165" y="1134" width="190" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="jzP-WY-2gg"/>
@@ -48,8 +50,16 @@
                                     <action selector="togglePlaneDetectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agX-lp-e4i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-77-sR9">
+                                <rect key="frame" x="619" y="1134" width="83" height="30"/>
+                                <state key="normal" title="Save As Obj"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2n0-eQ-vDU"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eng-pw-LPV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fYp-l9-Sbs" firstAttribute="bottom" secondItem="eng-pw-LPV" secondAttribute="bottom" constant="-10" id="4tj-VU-lR0"/>
                             <constraint firstItem="k4Z-bN-ivP" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" id="BZ1-TQ-PvC"/>
@@ -59,10 +69,11 @@
                             <constraint firstItem="pt1-je-2X5" firstAttribute="centerY" secondItem="dLm-0H-1oF" secondAttribute="centerY" id="XSF-n8-eB2"/>
                             <constraint firstItem="k4Z-bN-ivP" firstAttribute="top" secondItem="eng-pw-LPV" secondAttribute="top" id="fOa-iT-qD8"/>
                             <constraint firstItem="k4Z-bN-ivP" firstAttribute="bottom" secondItem="eng-pw-LPV" secondAttribute="bottom" constant="20" id="gOQ-O6-CEU"/>
+                            <constraint firstItem="fYp-l9-Sbs" firstAttribute="leading" secondItem="pIn-77-sR9" secondAttribute="trailing" constant="32" id="gOz-w0-H5k"/>
+                            <constraint firstItem="pIn-77-sR9" firstAttribute="centerY" secondItem="fYp-l9-Sbs" secondAttribute="centerY" id="toc-FV-kYo"/>
                             <constraint firstItem="dLm-0H-1oF" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" constant="30" id="uZk-zy-jGc"/>
                             <constraint firstItem="pt1-je-2X5" firstAttribute="leading" secondItem="dLm-0H-1oF" secondAttribute="trailing" constant="15" id="zRo-2n-LAP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eng-pw-LPV"/>
                     </view>
                     <connections>
                         <outlet property="arView" destination="k4Z-bN-ivP" id="EeW-ii-L6y"/>
@@ -76,4 +87,20 @@
             <point key="canvasLocation" x="137.41007194244605" y="133.66834170854273"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dLm-0H-1oF">
+            <size key="intrinsicContentSize" width="74" height="30"/>
+        </designable>
+        <designable name="fYp-l9-Sbs">
+            <size key="intrinsicContentSize" width="39" height="30"/>
+        </designable>
+        <designable name="pt1-je-2X5">
+            <size key="intrinsicContentSize" width="147" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

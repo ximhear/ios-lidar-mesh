@@ -43,5 +43,18 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    
+    <key>NSUbiquitousContainers</key>
+    <dict>
+        <key>iCloud.g.gLidar</key>
+        <dict>
+            <key>NSUbiquitousContainerIsDocumentScopePublic</key>
+            <true/>
+            <key>NSUbiquitousContainerSupportedFolderLevels</key>
+            <string>Any</string>
+            <key>NSUbiquitousContainerName</key>
+            <string>gLidar</string>
+        </dict>
+    </dict>
 </dict>
 </plist>

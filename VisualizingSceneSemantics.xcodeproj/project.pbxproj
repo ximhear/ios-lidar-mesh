@@ -16,11 +16,13 @@
 		E1635E1F23D5BDFE0031A7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1635E1E23D5BDFE0031A7D8 /* Assets.xcassets */; };
 		E1635E2223D5BDFE0031A7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1635E2023D5BDFE0031A7D8 /* LaunchScreen.storyboard */; };
 		E1635E2E23D736E70031A7D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1635E2D23D736E70031A7D8 /* Extensions.swift */; };
+		ECC78DC524D7E20C00BDC8E9 /* GZLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC78DC424D7E20C00BDC8E9 /* GZLog.swift */; };
+		ECC78DC724D7E2B400BDC8E9 /* ARMeshGeometry-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC78DC624D7E2B400BDC8E9 /* ARMeshGeometry-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C26373523E065EA0017A846 /* ViewController+CoachingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+CoachingOverlay.swift"; sourceTree = "<group>"; };
-		28811F3E4EB27EC6196B6F5B /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		28811F3E4EB27EC6196B6F5B /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		717F7FEE23F054DC00208378 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E136397F23EB064300668585 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E1635E1223D5BDFD0031A7D8 /* Scene Semantics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scene Semantics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +33,10 @@
 		E1635E2123D5BDFE0031A7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1635E2323D5BDFE0031A7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1635E2D23D736E70031A7D8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		EAFE649F2E6D58090EBA9357 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		EAFE649F2E6D58090EBA9357 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		ECC78DC424D7E20C00BDC8E9 /* GZLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZLog.swift; sourceTree = "<group>"; };
+		ECC78DC624D7E2B400BDC8E9 /* ARMeshGeometry-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARMeshGeometry-extension.swift"; sourceTree = "<group>"; };
+		ECC78DC824D7E38F00BDC8E9 /* Scene Semantics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scene Semantics.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +55,6 @@
 			children = (
 				28811F3E4EB27EC6196B6F5B /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -76,8 +80,11 @@
 		E1635E1423D5BDFD0031A7D8 /* VisualizingSceneSemantics */ = {
 			isa = PBXGroup;
 			children = (
+				ECC78DC824D7E38F00BDC8E9 /* Scene Semantics.entitlements */,
+				ECC78DC424D7E20C00BDC8E9 /* GZLog.swift */,
 				E1635E1523D5BDFD0031A7D8 /* AppDelegate.swift */,
 				E1635E1723D5BDFD0031A7D8 /* ViewController.swift */,
+				ECC78DC624D7E2B400BDC8E9 /* ARMeshGeometry-extension.swift */,
 				0C26373523E065EA0017A846 /* ViewController+CoachingOverlay.swift */,
 				E1635E2D23D736E70031A7D8 /* Extensions.swift */,
 				E136397F23EB064300668585 /* RoundedButton.swift */,
@@ -170,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1635E1823D5BDFD0031A7D8 /* ViewController.swift in Sources */,
+				ECC78DC524D7E20C00BDC8E9 /* GZLog.swift in Sources */,
+				ECC78DC724D7E2B400BDC8E9 /* ARMeshGeometry-extension.swift in Sources */,
 				E136398023EB064300668585 /* RoundedButton.swift in Sources */,
 				E1635E1623D5BDFD0031A7D8 /* AppDelegate.swift in Sources */,
 				E1635E2E23D736E70031A7D8 /* Extensions.swift in Sources */,
@@ -320,15 +329,16 @@
 			baseConfigurationReference = EAFE649F2E6D58090EBA9357 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VisualizingSceneSemantics/Scene Semantics.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J8647L48BZ;
 				INFOPLIST_FILE = "$(SRCROOT)/VisualizingSceneSemantics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.VisualizingSceneSemantics${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = g.VisualizingSceneSemantics;
 				PRODUCT_NAME = "Scene Semantics";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -342,15 +352,16 @@
 			baseConfigurationReference = EAFE649F2E6D58090EBA9357 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VisualizingSceneSemantics/Scene Semantics.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J8647L48BZ;
 				INFOPLIST_FILE = "$(SRCROOT)/VisualizingSceneSemantics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.VisualizingSceneSemantics${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = g.VisualizingSceneSemantics;
 				PRODUCT_NAME = "Scene Semantics";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
